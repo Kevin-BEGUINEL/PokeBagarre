@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PokemonTest {
     @Test
-    public void devrait_etre_vainqueur_s_il_a_une_meilleure_attaque ()
+    public void pokemon1_devrait_etre_vainqueur_s_il_a_une_meilleure_attaque ()
     {
         // GIVEN
         Pokemon premier  = new Pokemon("Pikachu", "urlImage", new Stats(12, 12));
@@ -19,7 +19,7 @@ class PokemonTest {
     }
 
     @Test
-    public void devrait_etre_vainqueur_s_il_a_une_meilleure_defense ()
+    public void pokemon1_devrait_etre_vainqueur_s_il_a_une_meilleure_defense ()
     {
         // GIVEN
         Pokemon premier  = new Pokemon("Pikachu", "urlImage", new Stats(12, 12));
@@ -31,7 +31,7 @@ class PokemonTest {
     }
 
     @Test
-    public void devrait_etre_vainqueur_s_il_a_la_priorite ()
+    public void pokemon1_devrait_etre_vainqueur_s_il_a_la_priorite ()
     {
         // GIVEN
         Pokemon premier  = new Pokemon("Pikachu", "urlImage", new Stats(12, 12));
@@ -43,27 +43,27 @@ class PokemonTest {
     }
 
     @Test
-    public void devrait_etre_perdant_s_il_a_une_moins_bonne_attaque ()
+    public void pokemon2_devrait_etre_vainqueur_s_il_a_une_meilleure_attaque ()
     {
         // GIVEN
         Pokemon premier  = new Pokemon("Pikachu", "urlImage", new Stats(10, 12));
         Pokemon second  = new Pokemon("Rondoudou", "urlImage", new Stats(12, 12));
         // WHEN
-        boolean estVainqueur = premier.estVainqueurContre(second);
+        boolean estVainqueur = second.estVainqueurContre(premier);
         // THEN
-        assertThat(estVainqueur).isFalse() ;
+        assertThat(estVainqueur).isTrue() ;
     }
 
     @Test
-    public void devrait_etre_perdant_s_il_a_une_moins_bonne_defense ()
+    public void pokemon2_devrait_etre_vainqueur_s_il_a_une_meilleure_defense ()
     {
         // GIVEN
         Pokemon premier  = new Pokemon("Pikachu", "urlImage", new Stats(12, 10));
         Pokemon second  = new Pokemon("Rondoudou", "urlImage", new Stats(12, 12));
         // WHEN
-        boolean estVainqueur = premier.estVainqueurContre(second);
+        boolean estVainqueur = second.estVainqueurContre(premier);
         // THEN
-        assertThat(estVainqueur).isFalse() ;
+        assertThat(estVainqueur).isTrue() ;
     }
 
 }
