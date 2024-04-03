@@ -20,7 +20,7 @@ public class Bagarre {
   public CompletableFuture<Pokemon> demarrer(String nomPremierPokemon, String nomSecondPokemon) {
     validerNomPokemons(nomPremierPokemon, nomSecondPokemon);
     return webApi.recupererParNom(nomPremierPokemon)
-      .thenCombine(webApi.recupererParNom(nomSecondPokemon), Bagarre::determinerVainqueur);
+              .thenCombine(webApi.recupererParNom(nomSecondPokemon), Bagarre::determinerVainqueur);
   }
 
   private void validerNomPokemons(String nomPremierPokemon, String nomSecondPokemon) {

@@ -15,7 +15,7 @@ class PokemonTest {
         // WHEN
         boolean estVainqueur = premier.estVainqueurContre(second);
         // THEN
-        assertThat(estVainqueur).isTrue() ;
+        assertThat(estVainqueur).isTrue();
     }
 
     @Test
